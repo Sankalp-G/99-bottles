@@ -7,9 +7,8 @@ class Bottles
   end
 
   def verses(start_num, end_num)
-    start_num.downto(end_num)
-             .reduce('') { |res, num| res + verse(num) + "\n" }
-             .chomp
+    range = start_num.downto(end_num)
+    range.map { |num| verse(num) }.join("\n")
   end
 
   def verse(num)
